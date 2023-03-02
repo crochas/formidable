@@ -1,15 +1,15 @@
 function createForm() {
-  // Spécifiez l'ID de la feuille de calcul contenant les questions
+  // Spécify ID of the sheet with questions
   var sheetId = "SPREADSHEET_ID";
   
-  // Ouvrez la feuille de calcul et récupérez les données
+  // Get the questions
   var sheet = SpreadsheetApp.openById(sheetId).getSheetByName("SHEET_NAME");
   var data = sheet.getDataRange().getValues();
   
   // Create a form
   var form = FormApp.create('new survey');
   
-  // Pour chaque question dans la feuille de calcul, créez une question dans le formulaire
+  // Create questions
   for (var i = 0; i < data.length; i++) {
     var row = data[i];
     var question = row[0];    
